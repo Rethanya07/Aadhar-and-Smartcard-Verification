@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_intro.css') }}">
+</head>
+<body>
+    <div class="error-container">
+        <h1>⚠️ Error Occurred</h1>
+        <p>There was an issue processing your request. Please try again.</p>
+        <a href="{{ url_for('index1') }}" class="btn">Go Home</a>
+    </div>
+</body>
+</html>

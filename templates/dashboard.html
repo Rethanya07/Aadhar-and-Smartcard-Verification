@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+
+    <header>
+        <section id="dashboard">
+        <h1>Loan Waiver System - Admin Dashboard</h1></section>
+    </header>
+
+    <nav>
+        <a href="{{ url_for('index1') }}#dashboard" class="btn">Back to Menu</a>
+    </nav>
+
+    <div class="content" style="align-content: center;">
+        <h2>Borrowers Data</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Aadhar Number</th>
+                    <th>Smart Card Number</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="borrowers-data">
+                <!-- Data will be loaded here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+
+</body>
+</html>

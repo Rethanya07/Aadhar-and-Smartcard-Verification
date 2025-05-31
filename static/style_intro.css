@@ -1,0 +1,169 @@
+body {
+    background: url('images/image_loan.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'poppins', sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+/* Hero Section (Top Part with Button) */
+.hero {
+    height: 100vh; /* Full screen height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay Styling for Both Sections */
+.overlay, #rules, #documents, #dashboard,#eligibility{
+    background: rgba(255, 255, 255, 0.66);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.801);/* Dark transparent background */
+    padding: 50px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: auto;
+    
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background 0.3s ease;
+} 
+
+/* Add space between the sections */
+.verify-section {
+    background: rgba(255, 255, 255, 0.66);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.801);
+    padding: 30px;
+    max-width: 800px;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 80px;
+    margin-bottom: 80px; /* Adds space between header and verify-section */
+}
+/* Footer Styling */
+footer {
+    background: rgba(0, 0, 0, 0.8); /* Dark transparent background */
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: relative; /* Keeps it at the bottom */
+    width: 100%;
+    font-size: 16px;
+}
+
+.footer-container a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-container a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+
+.back_btn-section {
+    margin-bottom: 80px;
+    margin: 10px; 
+    padding: 50px;
+}
+
+.but {
+    display: inline-block;
+    margin-bottom: 80px;
+    padding: 10px;
+    margin: 20px auto;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background 0.3s ease;
+}
+.but:hover {
+    background-color: #0056b3;
+}
+
+@media screen and (max-width: 768px) {
+    .overlay {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+}
+
+#progress-container {
+    width: 100%;
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 20px;
+    display: none;
+    margin-top: 15px;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #4caf50;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    transition: width 0.4s ease;
+}
+/**/
+
+
+

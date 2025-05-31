@@ -1,0 +1,61 @@
+body {
+    background: url('images/image_loan.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+h2,h1 {
+    color: #321a1d;
+    background: rgba(255, 255, 255, 0.66);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.801);
+}
+
+table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+th {
+
+    background: #007BFF;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+.content{
+    background: rgba(255, 255, 255, 0.66);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.801);
+    margin-top: 20px;
+}
+
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}

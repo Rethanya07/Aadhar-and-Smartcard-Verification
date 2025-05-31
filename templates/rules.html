@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Waiver Rules & Eligibility</title>
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_intro.css') }}">
+    
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Rules Section */
+        #rules {
+            
+            padding: 30px;
+            width: 90%;
+            max-width: 650px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease-in-out;
+        }
+
+        h1 {
+            font-size: 26px;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: cornflowerblue;
+            margin: 10px 0;
+            padding: 12px 15px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        li:hover {
+            transform: scale(1.03);
+        }
+
+        li i {
+            margin-right: 12px;
+            color: #007bff;
+            font-size: 18px;
+        }
+
+        /* Back Button */
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 600px) {
+            #rules {
+                width: 95%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            li {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            .btn {
+                font-size: 14px;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- Rules Section -->
+    <section id="rules">
+        <h1><i class="fas fa-balance-scale"></i> Loan Waiver Rules & Eligibility</h1>
+        <ul>
+            <li><i class="fas fa-user-check"></i> <strong>Eligibility:</strong> Only farmers with valid Aadhar & Smart Card.</li>
+            <li><i class="fas fa-landmark"></i> <strong>Loan Type:</strong> Applicable to agricultural loans only.</li>
+            <li><i class="fas fa-rupee-sign"></i> <strong>Loan Amount Limit:</strong> Waiver applicable for loans up to ₹2,00,000.</li>
+            <li><i class="fas fa-file-alt"></i> <strong>Verification Process:</strong> Aadhar and land records must match.</li>
+            <li><i class="fas fa-calendar-check"></i> <strong>Application Deadline:</strong> Must apply before the official waiver deadline.</li>
+            <li><i class="fas fa-balance-scale"></i> <strong>Government Approval:</strong> Waivers are granted only after verification.</li>
+            <li><i class="fas fa-exclamation-triangle"></i> <strong>Fraud Prevention:</strong> False claims will result in penalties.</li>
+        </ul>
+        <a href="{{ url_for('index1') }}#rules" class="btn"><i class="fas fa-arrow-left"></i> Back to Menu</a>
+    </section>
+
+</body>
+</html>

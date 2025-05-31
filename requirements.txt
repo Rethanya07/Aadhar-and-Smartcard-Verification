@@ -1,0 +1,5 @@
+Flask
+opencv-python
+pytesseract
+easyocr
+mysql-connector-python

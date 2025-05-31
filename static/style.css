@@ -1,0 +1,90 @@
+body {
+    background: url('images/image_loan.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+.failure-container{
+    background: rgba(255, 255, 255, 0.66);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.801);/* Dark transparent background */
+    padding: 50px;
+    border-radius: 10px;
+    text-align: center;
+}
+.container {
+    background: rgba(255, 255, 255, 0.66);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.801);/* Dark transparent background */
+    padding: 50px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: auto;
+    /* Ensures text is visible on dark background */
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, select, button {
+    margin: 10px 0;
+    padding: 8px;
+    font-size: 16px;
+}
+.side-image {
+    position: absolute;
+    top: 20%;
+    right: 30px;  /* Use left: 30px; to place it on the left side */
+    z-index: 1;
+    max-width: 300px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.side-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Optional Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

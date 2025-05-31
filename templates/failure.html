@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verification Failed</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="failure-container">
+        <h1>❌ Verification Failed</h1>
+        <p>The Aadhaar and Smart Card details could not be verified.</p>
+        <p>Request the user to send the correct Aadhar and Smart Card details.</p>
+        <a href="{{ url_for('verify') }}" class="btn">Try Again</a>
+        <p id="result"></p>
+        <button id="sendReportBtnForFail" data-aadhar="{{ aadhar }}" data-smartcard="{{ smartcard }}">
+            Send Verification Report
+        </button>
+    </div>
+
+    <script>
+        const aadhaarNumber = "{{ aadhar }}";
+        const smartCardNumber = "{{ smartcard }}";
+    </script>
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documents Needed for Loan Waiver</title>
+    <link rel="stylesheet" href="static/style_intro.css">
+    
+</head>
+<body>
+
+    <!-- documents Section -->
+    <section id="verifies" class="verify-section">
+        <h1>Aadhar and Smartcard verification for Loan Waiver</h1>
+        <div class="container">
+            <h2>Aadhar & Smart Card Verification</h2>
+            <label>Aadhaar Card Image:</label>
+            <input type="file" id="aadhaarInput" accept="image/*" required><br><br>
+    
+            <label>Smart Card Image:</label>
+            <input type="file" id="smartcardInput" accept="image/*" required><br><br>
+            <button onclick="uploadFiles()">Upload & Verify</button>
+
+            <!-- Progress Bar -->
+            <div id="progress-container">
+            <div id="progress-bar"></div>
+            </div>
+
+            <p id="result"></p>
+        </div>
+        <a href="{{ url_for('login') }}#login" class="btn">Back to Menu</a>
+    </section>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

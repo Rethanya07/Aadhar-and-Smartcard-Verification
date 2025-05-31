@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aadhar & Smart Card Verification</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style_intro.css') }}">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-..."
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  
+  <style>
+    body, html {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+      transition: background-color 0.3s, color 0.3s;
+      background: url('static/images/image_loan.jpg') no-repeat center center fixed;
+    background-size: cover;
+    }
+
+    header {
+      padding: 40px;
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgb(250, 250, 250);
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-links a {
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+      margin: 0 15px;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .dark-toggle {
+      background: none;
+      border: 1px solid white;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  .page-section {
+  background: linear-gradient(to right, #b7a8d1c3, #d0b6b6);
+  padding: 40px;
+  text-align: center;
+  justify-content: center;
+   align-items: center;
+   transition: all 0.6s ease; 
+}
+  .page-section h2 {
+  margin-top: 15%;
+  font-size: 28px;
+  color: #6f2fa1;
+  margin-bottom: 15px;
+}
+.page-section p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000000;
+}
+
+.sidebar {
+  position: fixed;
+  top: 85px; /* below header/nav */
+  left: 0;
+  width: 220px;
+  background: rgba(254, 254, 254, 0.6);
+  display: block;
+  height: 100%;
+  padding-top: 20px;
+  z-index: 2;
+}
+
+.sidebar a {
+  padding: 12px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  transition: background 0.3s;
+}
+
+    .sidebar a i {
+    margin-right: 10px;
+    }
+
+    .sidebar a:hover {
+      background-color:rgb(112, 176, 235);
+    }
+
+    section {
+      margin-left: 200px;
+      padding: 60px 30px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease-out;
+      min-height: 100vh;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .contact-section h2 {
+  font-size: 30px;
+  color: #6f2fa1;
+  margin-bottom: 25px;
+}
+/* Home Section Styles */
+#home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 10%;
+  background: linear-gradient(to right, #b7a8d1c3, #d0b6b6);
+  min-height: 100vh;
+  margin-left: 220px;
+}
+
+.home-text {
+  max-width: 600px;
+}
+
+.home-text h1 {
+  font-size: 48px;
+  color: #6f2fa1;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.home-text p {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.home-text .cta-btn {
+  padding: 12px 28px;
+  background: #6f2fa1;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.home-text .cta-btn:hover {
+  background: #5d2790;
+}
+
+/* Hero Image or Illustration */
+.home-image img {
+  max-width: 480px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  #home {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 5%;
+  }
+
+  .home-image {
+    margin-top: 30px;
+  }
+}
+
+.contact-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 250px;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.contact-info i {
+  color: #007bff;
+  margin-right: 10px;
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 250px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #6f2fa1;
+  outline: none;
+}
+
+.contact-form button {
+  background-color: #6f2fa1;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #521f8c;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 25px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.info-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.icon-style {
+  font-size: 40px;
+  color: #6f2fa1;
+  margin-bottom: 15px;
+}
+
+
+    .dark-toggle {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+    
+    .dark-mode .page-section,
+.dark-mode .page-section * {
+  color: #ffffff !important;
+}
+    .dark-mode .navbar, .dark-mode .sidebar , .dark-mode .page-section, .dark-mode .info-card, .dark-mode .contact-box{
+      background-color: #1f1f1f;
+    }
+
+    .dark-mode .sidebar a, .dark-mode .nav-links a ,.dark-mode .page-section {
+      color: #fff;
+    }
+
+    .dark-mode .sidebar a:hover {
+      background-color: #333;
+    }
+
+    .dark-mode .dark-toggle {
+      border-color: #ccc;
+      color: #ccc;
+    }
+    .side-image {
+    position: absolute;
+    top: 20%;
+    right: 30px;  /* Use left: 30px; to place it on the left side */
+    z-index: 1;
+    max-width: 300px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.side-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Optional Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <h1 >Aadhar and Smart Card Verification System</h1>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#help">Help</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="dark-toggle" onclick="toggleDarkMode()">Dark Mode</button>
+  </nav>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt"></i>Sign In</a>
+    <a href="{{ url_for('dashboard') }}"><i class="fas fa-tools"></i> Admin Dashboard</a>
+    <a href="{{ url_for('eligibility') }}"><i class="fas fa-check-circle"></i>Eligibility</a>
+    <a href="{{ url_for('documents') }}"><i class="fas fa-file-alt"></i>Documents</a>
+    <a href="{{ url_for('rules') }}"><i class="fas fa-scroll"></i>Rules</a>
+    <a href="{{ url_for('index') }}" ><i class="fas fa-sign-out-alt"></i>Exit</a>
+  </div>
+  </div>
+
+  <!-- Content Sections -->
+<section id="home">
+  <div class="home-text">
+    <h1>Smart & Secure <br> Aadhar & Smart Card Verification</h1>
+    <p>Instantly verify your Aadhar and Ration Card to access government loan waivers with ease, transparency, and trust.</p>
+    <a href="#about"><button class="cta-btn">Next</button></a>
+  </div>
+  <div class="home-image">
+   <img src="https://images.pexels.com/photos/7652056/pexels-photo-7652056.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Aadhar ID Card Verification">
+
+  </div>
+</section>
+
+
+<section id="about" class="page-section">
+  <h2>About This System</h2>
+  <div class="card-container">
+    <div class="info-card">
+      <i class="fas fa-id-card-alt icon-style"></i>
+      <h3>Fast & Secure Verification</h3>
+      <p>Our platform validates Aadhar and Smart Card details in minutes using advanced OCR and backend verification logic.</p>
+    </div>
+    <div class="info-card">
+      <i class="fas fa-leaf icon-style"></i>
+      <h3>Supporting Farmers</h3>
+      <p>This system directly supports agricultural communities by enabling faster loan waiver processing digitally.</p>
+    </div>
+    <div class="info-card">
+      <i class="fas fa-bolt icon-style"></i>
+      <h3>Digital & Transparent</h3>
+      <p>We eliminate paperwork and queues with a transparent and streamlined online verification workflow.</p>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="page-section">
+  <h2>Our Services</h2>
+  <div class="card-container">
+    <div class="info-card">
+      <i class="fas fa-shield-alt icon-style"></i>
+      <h3>Document Verification</h3>
+      <p>Upload Aadhar or Smart Card images and get immediate verification status.</p>
+    </div>
+    <div class="info-card">
+      <i class="fas fa-bell icon-style"></i>
+      <h3>Instant Notifications</h3>
+      <p>Receive SMS and email alerts with your verification results and next steps.</p>
+    </div>
+    <div class="info-card">
+      <i class="fas fa-check-circle icon-style"></i>
+      <h3>Eligibility Check</h3>
+      <p>Automatically checks your eligibility for loan waiver based on verified records.</p>
+    </div>
+    <div class="info-card">
+      <i class="fas fa-chart-line icon-style"></i>
+      <h3>Admin Dashboard</h3>
+      <p>Officials can track requests and monitor borrower verification through a powerful dashboard.</p>
+    </div>
+  </div>
+</section>
+
+  <section id="help" class="page-section">
+  
+  <h2>Need Help?</h2><br>
+  <p>
+    Whether you're stuck uploading your documents or haven’t received a verification update, we’re here to help!
+  
+  <h3>Ask a Question</h3>
+  <form id="question-form">
+    <textarea id="question-input" placeholder="Type your question here..." rows="3" style="width: 100%; padding: 10px;"></textarea>
+    <br><br>
+    <button type="submit" style="background:#6f2fa1;padding: 8px 16px;">Submit Question</button>
+  </form>
+  <br><br>
+  <h3>Recent Questions</h3>
+  <ul id="recent-questions" style="list-style-type: none; padding-left: 0;"></ul>
+    <br><br>
+    Still need assistance? Reach out directly to our support team. Your convenience is our priority.
+  </p>
+  </section>
+
+  <section id="contact" class="page-section contact-section">
+  <h2>Contact Us</h2><br>
+  <div class="contact-box">
+    <div class="contact-info">
+      <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:support@verifygov.in">support@verifygov.in</a></p>
+      <p><i class="fas fa-phone-alt"></i> <strong>Phone:</strong> +91-9876543210</p>
+      <p><i class="fas fa-clock"></i> <strong>Hours:</strong> Mon – Fri, 9:00 AM – 5:00 PM</p>
+      <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Government Loan Waiver Dept, Erode, Tamil Nadu</p>
+      <p><em><i class="fas fa-info-circle"></i> We respond to all queries within 24 hours.</em></p>
+    </div>
+    
+  </div>
+  <br>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.625968340108!2d77.7272!3d11.3410!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96f5b3e4d8d21%3A0x4b3d01e14e9841c!2sErode%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin"
+    width="100%" height="300" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
+</section>
+
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    const sections = document.querySelectorAll('section');
+    function revealOnScroll() {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < triggerBottom) sec.classList.add('show');
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
+  
+</body>
+</html>

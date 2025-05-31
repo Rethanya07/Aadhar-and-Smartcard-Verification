@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Waiver Eligibility Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <section id="eligibility">
+            <h2>Government Loan Waiver Eligibility Checker</h2>
+        </section>
+        <form id="loanForm">
+            <label>Name:</label>
+            <input type="text" id="name" required>
+
+            <label>Category:</label>
+            <select id="category">
+                <option value="farmer">Farmer</option>
+                <option value="student">Student</option>
+                <option value="business">Business</option>
+            </select>
+
+            <label>Caste:</label>
+            <select id="caste">
+                <option value="general">General</option>
+                <option value="obc">OBC</option>
+                <option value="sc">SC</option>
+                <option value="st">ST</option>
+                <option value="aadhiDravidar">Aadhi Dravidar</option>
+            </select>
+
+            <label>Annual Income (INR):</label>
+            <input type="number" id="income" required>
+
+            <label>Loan Type:</label>
+            <select id="loanType">
+                <option value="school">School Loan</option>
+                <option value="business">Business Loan</option>
+                <option value="agriculture">Agriculture Loan</option>
+            </select>
+
+            <button type="button" onclick="checkEligibility()">Check Eligibility</button>
+        </form>
+        <div id="result"></div>
+        <nav>
+            <a href="{{ url_for('index1') }}#eligibility" class="btn">Back to Menu</a>
+        </nav>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
