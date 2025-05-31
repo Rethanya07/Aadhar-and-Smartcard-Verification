@@ -42,12 +42,12 @@ loan-verification-system/
 ## 🚀 Getting Started
 
 ### 1️⃣ Clone the Repository
-bash  
-git clone https://github.com/rethanya07/loan-verification-system.git  
-cd loan-verification-system  
+  
+git clone https://github.com/Rethanya07/Aadhar-and-Smartcard-Verification.git  
+cd Aadhar-and-Smartcard-Verification  
 
 ### 2️⃣ Create Virtual Environment and Install Dependencies
-bash  
+  
 python -m venv venv  
 source venv/bin/activate   # On Windows: venv\Scripts\activate  
 pip install -r requirements.txt  
